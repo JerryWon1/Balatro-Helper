@@ -1,12 +1,12 @@
 // data.js
 
-// Standard ranks (no Joker in this list)
+// Standard ranks (unchanged)
 const RANKS = [
     "2", "3", "4", "5", "6", "7", "8", "9", "10",
     "J", "Q", "K", "A"
   ];
   
-  // Standard suits
+  // Standard suits (unchanged)
   const SUITS = [
     "Hearts",
     "Diamonds",
@@ -14,14 +14,162 @@ const RANKS = [
     "Spades"
   ];
   
-  // Joker types (distinct from rank)
+  // Joker types with assigned rarities
+  // If any Joker in your list is missing, double-check for typos or formatting.
   const JOKERS = [
-    "Black Joker",
-    "Red Joker"
-    // Add more as needed
+    { name: "Joker", rarity: "Common" },
+    { name: "Greedy Joker", rarity: "Common" },
+    { name: "Lusty Joker", rarity: "Common" },
+    { name: "Wrathful Joker", rarity: "Common" },
+    { name: "Gluttonous Joker", rarity: "Common" },
+    { name: "Jolly Joker", rarity: "Common" },
+    { name: "Zany Joker", rarity: "Common" },
+    { name: "Mad Joker", rarity: "Common" },
+    { name: "Crazy Joker", rarity: "Common" },
+    { name: "Droll Joker", rarity: "Common" },
+    { name: "Sly Joker", rarity: "Common" },
+    { name: "Wily Joker", rarity: "Common" },
+    { name: "Clever Joker", rarity: "Common" },
+    { name: "Devious Joker", rarity: "Common" },
+    { name: "Crafty Joker", rarity: "Common" },
+    { name: "Half Joker", rarity: "Common" },
+    { name: "Joker Stencil", rarity: "Uncommon" },
+    { name: "Four Fingers", rarity: "Uncommon" },
+    { name: "Mime", rarity: "Uncommon" },
+    { name: "Credit Card", rarity: "Common" },
+    { name: "Ceremonial Dagger", rarity: "Uncommon" },
+    { name: "Banner", rarity: "Common" },
+    { name: "Mystic Summit", rarity: "Common" },
+    { name: "Marble Joker", rarity: "Uncommon" },
+    { name: "Loyalty Card", rarity: "Uncommon" },
+    { name: "8 Ball", rarity: "Common" },
+    { name: "Misprint", rarity: "Common" },
+    { name: "Dusk", rarity: "Uncommon" },
+    { name: "Raised Fist", rarity: "Common" },
+    { name: "Chaos the Clown", rarity: "Common" },
+    { name: "Fibonacci", rarity: "Uncommon" },
+    { name: "Steel Joker", rarity: "Uncommon" },
+    { name: "Scary Face", rarity: "Common" },
+    { name: "Abstract Joker", rarity: "Common" },
+    { name: "Delayed Gratification", rarity: "Common" },
+    { name: "Hack", rarity: "Common" },
+    { name: "Pareidolia", rarity: "Common" },
+    { name: "Gros Michel", rarity: "Common" },
+    { name: "Even Steven", rarity: "Common" },
+    { name: "Odd Todd", rarity: "Common" },
+    { name: "Scholar", rarity: "Common" },
+    { name: "Business Card", rarity: "Common" },
+    { name: "Supernova", rarity: "Common" },
+    { name: "Ride the Bus", rarity: "Common" },
+    { name: "Space Joker", rarity: "Uncommon" },
+    { name: "Egg", rarity: "Common" },
+    { name: "Burglar", rarity: "Uncommon" },
+    { name: "Blackboard", rarity: "Uncommon" },
+    { name: "Runner", rarity: "Common" },
+    { name: "Ice Cream", rarity: "Common" },
+    { name: "DNA", rarity: "Rare" },
+    { name: "Splash", rarity: "Common" },
+    { name: "Blue Joker", rarity: "Common" },
+    { name: "Sixth Sense", rarity: "Uncommon" },
+    { name: "Constellation", rarity: "Uncommon" },
+    { name: "Hiker", rarity: "Uncommon" },
+    { name: "Faceless Joker", rarity: "Common" },
+    { name: "Green Joker", rarity: "Common" },
+    { name: "Superposition", rarity: "Common" },
+    { name: "To Do List", rarity: "Common" },
+    { name: "Cavendish", rarity: "Common" },
+    { name: "Card Sharp", rarity: "Uncommon" },
+    { name: "Red Card", rarity: "Common" },
+    { name: "Madness", rarity: "Uncommon" },
+    { name: "Square Joker", rarity: "Common" },
+    { name: "Séance", rarity: "Uncommon" },
+    { name: "Riff-Raff", rarity: "Common" },
+    { name: "Vampire", rarity: "Uncommon" },
+    { name: "Shortcut", rarity: "Uncommon" },
+    { name: "Hologram", rarity: "Uncommon" },
+    { name: "Vagabond", rarity: "Rare" },
+    { name: "Baron", rarity: "Rare" },
+    { name: "Cloud 9", rarity: "Uncommon" },
+    { name: "Rocket", rarity: "Uncommon" },
+    { name: "Obelisk", rarity: "Rare" },
+    { name: "Midas Mask", rarity: "Uncommon" },
+    { name: "Luchador", rarity: "Uncommon" },
+    { name: "Photograph", rarity: "Common" },
+    { name: "Gift Card", rarity: "Uncommon" },
+    { name: "Turtle Bean", rarity: "Uncommon" },
+    { name: "Erosion", rarity: "Uncommon" },
+    { name: "Reserved Parking", rarity: "Common" },
+    { name: "Mail-In Rebate", rarity: "Common" },
+    { name: "To the Moon", rarity: "Uncommon" },
+    { name: "Hallucination", rarity: "Common" },
+    { name: "Fortune Teller", rarity: "Common" },
+    { name: "Juggler", rarity: "Common" },
+    { name: "Drunkard", rarity: "Common" },
+    { name: "Stone Joker", rarity: "Uncommon" },
+    { name: "Golden Joker", rarity: "Common" },
+    { name: "Lucky Cat", rarity: "Uncommon" },
+    { name: "Baseball Card", rarity: "Rare" },
+    { name: "Bull", rarity: "Uncommon" },
+    { name: "Diet Cola", rarity: "Uncommon" },
+    { name: "Trading Card", rarity: "Uncommon" },
+    { name: "Flash Card", rarity: "Uncommon" },
+    { name: "Popcorn", rarity: "Common" },
+    { name: "Spare Trousers", rarity: "Uncommon" },
+    { name: "Ancient Joker", rarity: "Rare" },
+    { name: "Ramen", rarity: "Uncommon" },
+    { name: "Walkie Talkie", rarity: "Common" },
+    { name: "Seltzer", rarity: "Uncommon" },
+    { name: "Castle", rarity: "Uncommon" },
+    { name: "Smiley Face", rarity: "Common" },
+    { name: "Campfire", rarity: "Rare" },
+    { name: "Golden Ticket", rarity: "Common" },
+    { name: "Mr. Bones", rarity: "Uncommon" },
+    { name: "Acrobat", rarity: "Uncommon" },
+    { name: "Sock and Buskin", rarity: "Uncommon" },
+    { name: "Swashbuckler", rarity: "Common" },
+    { name: "Troubadour", rarity: "Uncommon" },
+    { name: "Certificate", rarity: "Uncommon" },
+    { name: "Smeared Joker", rarity: "Uncommon" },
+    { name: "Throwback", rarity: "Uncommon" },
+    { name: "Hanging Chad", rarity: "Common" },
+    { name: "Rough Gem", rarity: "Uncommon" },
+    { name: "Bloodstone", rarity: "Uncommon" },
+    { name: "Arrowhead", rarity: "Uncommon" },
+    { name: "Onyx Agate", rarity: "Uncommon" },
+    { name: "Glass Joker", rarity: "Uncommon" },
+    { name: "Showman", rarity: "Uncommon" },
+    { name: "Flower Pot", rarity: "Uncommon" },
+    { name: "Blueprint", rarity: "Rare" },
+    { name: "Wee Joker", rarity: "Rare" },
+    { name: "Merry Andy", rarity: "Uncommon" },
+    { name: "Oops! All 6s", rarity: "Uncommon" },
+    { name: "The Idol", rarity: "Uncommon" },
+    { name: "Seeing Double", rarity: "Uncommon" },
+    { name: "Matador", rarity: "Uncommon" },
+    { name: "Hit the Road", rarity: "Rare" },
+    { name: "The Duo", rarity: "Rare" },
+    { name: "The Trio", rarity: "Rare" },
+    { name: "The Family", rarity: "Rare" },
+    { name: "The Order", rarity: "Rare" },
+    { name: "The Tribe", rarity: "Rare" },
+    { name: "Stuntman", rarity: "Rare" },
+    { name: "Invisible Joker", rarity: "Rare" },
+    { name: "Brainstorm", rarity: "Rare" },
+    { name: "Satellite", rarity: "Uncommon" },
+    { name: "Shoot the Moon", rarity: "Common" },
+    { name: "Driver's License", rarity: "Rare" },
+    { name: "Cartomancer", rarity: "Uncommon" },
+    { name: "Astronomer", rarity: "Uncommon" },
+    { name: "Burnt Joker", rarity: "Uncommon" },
+    { name: "Bootstraps", rarity: "Uncommon" },
+    { name: "Canio", rarity: "Legendary" },
+    { name: "Triboulet", rarity: "Legendary" },
+    { name: "Yorick", rarity: "Legendary" },
+    { name: "Chicot", rarity: "Legendary" },
+    { name: "Perkeo", rarity: "Legendary" }
   ];
   
-  // Editions
+  // Editions (unchanged)
   const EDITIONS = [
     "Base",
     "Foil",
@@ -30,7 +178,7 @@ const RANKS = [
     "Negative"
   ];
   
-  // Enhancements
+  // Enhancements (unchanged)
   const ENHANCEMENTS = [
     "None",
     "Bonus",
@@ -43,7 +191,7 @@ const RANKS = [
     "Lucky"
   ];
   
-  // Seals
+  // Seals (unchanged)
   const SEALS = [
     "None",
     "Gold",
