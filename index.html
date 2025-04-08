@@ -1,44 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Balatro Card Selector</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <title>Balatro Deck Builder</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <h1>Balatro Deck Builder</h1>
 
-  <h1>Balatro Card Selector</h1>
+  <!-- Section for Adding a Standard Playing Card -->
+  <section id="standardCardSection">
+    <h2>Add a Standard Playing Card</h2>
+    <div class="form-row">
+      <label for="rankSelect">Rank:</label>
+      <select id="rankSelect"></select>
+    </div>
+    <div class="form-row">
+      <label for="suitSelect">Suit:</label>
+      <select id="suitSelect"></select>
+    </div>
+    <div class="form-row">
+      <label for="editionSelectCard">Edition:</label>
+      <select id="editionSelectCard"></select>
+    </div>
+    <div class="form-row">
+      <label for="enhancementSelectCard">Enhancement:</label>
+      <select id="enhancementSelectCard"></select>
+    </div>
+    <div class="form-row">
+      <label for="sealSelectCard">Seal:</label>
+      <select id="sealSelectCard"></select>
+    </div>
+    <button id="addCardBtn">Add Playing Card</button>
+  </section>
 
-  <div class="selector">
-    <label for="rankSelect">Rank:</label>
-    <select id="rankSelect"></select>
-  </div>
+  <hr />
 
-  <div class="selector">
-    <label for="suitSelect">Suit:</label>
-    <select id="suitSelect"></select>
-  </div>
+  <!-- Section for Adding a Joker -->
+  <section id="jokerSection">
+    <h2>Add a Joker</h2>
+    <div class="form-row">
+      <label for="jokerSelect">Joker Type:</label>
+      <select id="jokerSelect"></select>
+    </div>
+    <div class="form-row">
+      <label for="editionSelectJoker">Edition:</label>
+      <select id="editionSelectJoker"></select>
+    </div>
+    <div class="form-row">
+      <label for="enhancementSelectJoker">Enhancement:</label>
+      <select id="enhancementSelectJoker"></select>
+    </div>
+    <div class="form-row">
+      <label for="sealSelectJoker">Seal:</label>
+      <select id="sealSelectJoker"></select>
+    </div>
+    <button id="addJokerBtn">Add Joker</button>
+  </section>
 
-  <div class="selector">
-    <label for="editionSelect">Edition:</label>
-    <select id="editionSelect"></select>
-  </div>
+  <hr />
 
-  <div class="selector">
-    <label for="enhancementSelect">Enhancement:</label>
-    <select id="enhancementSelect"></select>
-  </div>
+  <!-- Display the Deck (list of added cards) -->
+  <section id="deckDisplay">
+    <h2>Your Deck</h2>
+    <div id="deckContainer"></div>
+  </section>
 
-  <div class="selector">
-    <label for="sealSelect">Seal:</label>
-    <select id="sealSelect"></select>
-  </div>
-
-  <button id="displayCardBtn">Display Card</button>
-
-  <div id="cardDisplay"></div>
-
-  <!-- Data and main script -->
   <script src="data.js"></script>
   <script src="script.js"></script>
 </body>

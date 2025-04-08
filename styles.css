@@ -3,17 +3,25 @@ body {
     margin: 2rem;
   }
   
-  .selector {
+  h1, h2 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-row {
     margin-bottom: 1rem;
   }
   
-  #cardDisplay {
-    margin-top: 2rem;
+  label {
+    margin-right: 0.5rem;
   }
   
-  .card-container {
+  #deckContainer {
+    margin-top: 1rem;
+  }
+  
+  .card-item {
     border: 1px solid #ccc;
     padding: 1rem;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
   
