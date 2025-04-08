@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 2rem;
+  }
+  
+  .selector {
+    margin-bottom: 1rem;
+  }
+  
+  #cardDisplay {
+    margin-top: 2rem;
+  }
+  
+  .card-container {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  
