@@ -1,27 +1,151 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 2rem;
+/* 1) Base Reset / Global Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    /* Ensure font sizing scales well in different browsers */
+    font-size: 16px;
+  }
+  
+  body {
+    font-family: 'Nunito', sans-serif; /* from Google Fonts */
+    background: #f9fafb; /* a very light gray background */
+    color: #333; /* dark text for contrast */
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* let the footer stick to the bottom if content is short */
+  }
+  
+  /* 2) Layout Containers */
+  
+  header,
+  footer {
+    background: #212529; /* dark background */
+    color: #f9fafb; /* light text */
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  main {
+    flex: 1; /* expand to fill available vertical space */
+    max-width: 900px; /* limit content width for readability */
+    margin: 0 auto;
+    padding: 1rem;
   }
   
   h1, h2 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
   }
   
-  .form-row {
-    margin-bottom: 1rem;
+  section {
+    margin-bottom: 2rem;
   }
   
-  label {
-    margin-right: 0.5rem;
+  /* 3) Card / Form Styling */
+  
+  .section-card-form {
+    background: #ffffff; /* white background for the form area */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* subtle shadow */
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* This container wraps the dropdowns and button */
+  .card-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* two columns layout */
+    gap: 1rem;
+  }
+  
+  .card-form label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 600; /* bold label */
+  }
+  
+  .card-form select,
+  .card-form button {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .card-form button {
+    cursor: pointer;
+    background: #007bff; /* a blue primary color */
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    transition: background 0.2s ease;
+  }
+  
+  .card-form button:hover {
+    background: #005dc1; /* darken on hover */
+  }
+  
+  /* If you have multiple rows of dropdowns, you can reorganize your grid or consider using <fieldset>. */
+  
+  /* 4) "My Cards" Section */
+  
+  #myCardsSection {
+    background: #fdfdfd;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
   }
   
   #cardsContainer {
     margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    /* This creates a responsive grid for your added cards */
   }
   
+  /* 5) Individual Card Items */
+  
   .card-item {
-    border: 1px solid #ccc;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
     padding: 1rem;
-    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .card-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  }
+  
+  .card-item strong {
+    color: #333;
+  }
+  
+  .card-item p {
+    margin: 0.25rem 0;
+  }
+  
+  /* 6) Footer */
+  
+  footer p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  
+  /* 7) Media Queries for Mobile Responsiveness */
+  
+  @media (max-width: 600px) {
+    .card-form {
+      grid-template-columns: 1fr; /* stack the dropdowns and button on small screens */
+    }
   }
   
