@@ -1,12 +1,13 @@
 // data.js
 
-// Standard ranks (unchanged)
+//
+// 1) Standard Playing Card Data
+//
 const RANKS = [
     "2", "3", "4", "5", "6", "7", "8", "9", "10",
     "J", "Q", "K", "A"
   ];
   
-  // Standard suits (unchanged)
   const SUITS = [
     "Hearts",
     "Diamonds",
@@ -14,9 +15,30 @@ const RANKS = [
     "Spades"
   ];
   
-  // Joker types with assigned rarities
-  // If any Joker in your list is missing, double-check for typos or formatting.
+  // Optional arrays if you still allow enhancements and seals for playing cards:
+  const ENHANCEMENTS = [
+    "Bonus",
+    "Mult",
+    "Wild",
+    "Glass",
+    "Steel",
+    "Stone",
+    "Gold",
+    "Lucky"
+  ];
+  
+  const SEALS = [
+    "Gold",
+    "Red",
+    "Blue",
+    "Purple"
+  ];
+  
+  //
+  // 2) Joker Cards Data
+  //
   const JOKERS = [
+    // Each Joker has a name and a rarity. You can remove or adjust rarities if needed.
     { name: "Joker", rarity: "Common" },
     { name: "Greedy Joker", rarity: "Common" },
     { name: "Lusty Joker", rarity: "Common" },
@@ -169,34 +191,12 @@ const RANKS = [
     { name: "Perkeo", rarity: "Legendary" }
   ];
   
-  // Editions (unchanged)
+  // Editions (for jokers only)
   const EDITIONS = [
     "Base",
     "Foil",
     "Holographic",
     "Polychrome",
     "Negative"
-  ];
-  
-  // Enhancements (unchanged)
-  const ENHANCEMENTS = [
-    "None",
-    "Bonus",
-    "Mult",
-    "Wild",
-    "Glass",
-    "Steel",
-    "Stone",
-    "Gold",
-    "Lucky"
-  ];
-  
-  // Seals (unchanged)
-  const SEALS = [
-    "None",
-    "Gold",
-    "Red",
-    "Blue",
-    "Purple"
   ];
   

@@ -1,72 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Balatro Helper</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- optional Google font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Balatro Helper</h1>
 
-  <!-- Section for Selecting a Standard Playing Card -->
-  <section id="standardCardSection">
-    <h2>Select a Standard Playing Card</h2>
-    <div class="form-row">
-      <label for="rankSelect">Rank:</label>
-      <select id="rankSelect"></select>
-    </div>
-    <div class="form-row">
-      <label for="suitSelect">Suit:</label>
-      <select id="suitSelect"></select>
-    </div>
-    <div class="form-row">
-      <label for="editionSelectCard">Edition:</label>
-      <select id="editionSelectCard"></select>
-    </div>
-    <div class="form-row">
-      <label for="enhancementSelectCard">Enhancement:</label>
-      <select id="enhancementSelectCard"></select>
-    </div>
-    <div class="form-row">
-      <label for="sealSelectCard">Seal:</label>
-      <select id="sealSelectCard"></select>
-    </div>
-    <button id="addCardBtn">Add Standard Card</button>
-  </section>
+  <header>
+    <h1>Balatro Helper</h1>
+  </header>
 
-  <hr />
+  <main>
+    <!-- three‑column grid -->
+    <div id="threeColumnLayout">
 
-  <!-- Section for Selecting a Joker Card -->
-  <section id="jokerSection">
-    <h2>Select a Joker Card</h2>
-    <div class="form-row">
-      <label for="jokerSelect">Joker Type:</label>
-      <select id="jokerSelect"></select>
-    </div>
-    <div class="form-row">
-      <label for="editionSelectJoker">Edition:</label>
-      <select id="editionSelectJoker"></select>
-    </div>
-    <div class="form-row">
-      <label for="enhancementSelectJoker">Enhancement:</label>
-      <select id="enhancementSelectJoker"></select>
-    </div>
-    <div class="form-row">
-      <label for="sealSelectJoker">Seal:</label>
-      <select id="sealSelectJoker"></select>
-    </div>
-    <button id="addJokerBtn">Add Joker Card</button>
-  </section>
+      <!-- LEFT  – Add playing card -->
+      <section class="section-card-form" id="standardCardSection">
+        <h2>Add Playing Card</h2>
 
-  <hr />
+        <div class="form-row">
+          <label for="rankSelect">Rank:</label>
+          <select id="rankSelect"></select>
+        </div>
+        <div class="form-row">
+          <label for="suitSelect">Suit:</label>
+          <select id="suitSelect"></select>
+        </div>
+        <div class="form-row">
+          <label for="enhancementSelectCard">Enhancement:</label>
+          <select id="enhancementSelectCard"></select>
+        </div>
+        <div class="form-row">
+          <label for="sealSelectCard">Seal:</label>
+          <select id="sealSelectCard"></select>
+        </div>
 
-  <!-- My Cards Section -->
-  <section id="myCardsSection">
-    <h2>My Cards</h2>
-    <div id="cardsContainer"></div>
-  </section>
+        <button id="addCardBtn">Add Playing Card</button>
+      </section>
+
+      <!-- MIDDLE – Display section -->
+      <section id="displaySection">
+        <div>
+          <h2>Jokers</h2>
+          <div id="jokersContainer" class="card-display"></div>
+        </div>
+
+        <div>
+          <h2>Playing Cards</h2>
+          <p>(Click a card to toggle it into or out of “Currently Playing.”)</p>
+          <div id="playingCardsContainer" class="card-display"></div>
+        </div>
+
+        <div>
+          <h2>Currently Playing</h2>
+          <div id="playingContainer" class="card-display"></div>
+        </div>
+      </section>
+
+      <!-- RIGHT – Add joker -->
+      <section class="section-card-form" id="jokerSection">
+        <h2>Add Joker Card</h2>
+
+        <div class="form-row">
+          <label for="jokerSelect">Joker Type:</label>
+          <select id="jokerSelect"></select>
+        </div>
+        <div class="form-row">
+          <label for="editionSelectJoker">Edition:</label>
+          <select id="editionSelectJoker"></select>
+        </div>
+
+        <button id="addJokerBtn">Add Joker Card</button>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Balatro Helper</p>
+  </footer>
 
   <script src="data.js"></script>
   <script src="script.js"></script>
+  <script src="compose.js"></script>
 </body>
 </html>

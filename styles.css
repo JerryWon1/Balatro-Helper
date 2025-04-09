@@ -1,151 +1,141 @@
-/* 1) Base Reset / Global Styles */
+/* reset / globals */
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px}
+body{
+  font-family:'Poppins',sans-serif;
+  background:#1C1C1C;
+  color:#F2F2F2;
+  line-height:1.5;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* header / footer */
+header,footer{background:#333;padding:1rem;text-align:center}
+header h1{font-size:1.75rem}
+
+main{flex:1;display:flex;flex-direction:column;margin:1rem 2rem}
+
+/* three‑column grid */
+#threeColumnLayout{
+  display:grid;
+  grid-template-columns:300px 1fr 300px;
+  gap:1.5rem;
+  max-width:1400px;
+  width:100%;
+  margin:0 auto 2rem;
+}
+
+/* form cards (left & right) */
+.section-card-form{
+  background:#262626;
+  border-radius:8px;
+  padding:1rem;
+  box-shadow:0 2px 6px rgba(0,0,0,.4);
+  display:flex;
+  flex-direction:column;
+}
+.section-card-form h2{font-size:1.2rem;margin-bottom:.75rem}
+.form-row{margin-bottom:1rem}
+label{display:block;margin-bottom:.3rem;font-weight:600}
+select{
+  width:100%;
+  background:#3C3C3C;
+  border:1px solid #555;
+  border-radius:4px;
+  color:#F2F2F2;
+  padding:.4rem;
+}
+button{
+  background:#444;
+  border:none;
+  border-radius:4px;
+  color:#F2F2F2;
+  padding:.5rem 1rem;
+  cursor:pointer;
+  font-weight:600;
+  transition:background .2s;
+  margin-top:.5rem;
+}
+button:hover{background:#555}
+
+/* display section (middle column) */
+#displaySection{
+  background:#262626;
+  border-radius:8px;
+  padding:1rem;
+  box-shadow:0 2px 6px rgba(0,0,0,.4);
+  display:flex;
+  flex-direction:column;
+  gap:2rem;
+}
+#displaySection h2{font-size:1.2rem;margin-bottom:.5rem}
+
+.card-display{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+}
+
+/* ----------  image‑based card tile  ---------- */
+.card-item{
+  position:relative;          /* keep delete × and edition label anchored */
+  overflow:hidden;            /* hide label corners */
+  background:#2F2F2F;
+  border:1px solid #444;
+  border-radius:6px;
+  width:100px;                /* shrink because we now show an image */
+  height:140px;
+  padding:0;
+  cursor:grab;
+  user-select:none;
+  box-shadow:0 1px 4px rgba(0,0,0,.3);
+  transition:transform .2s,box-shadow .2s;
+}
+.card-item:hover{
+  transform:translateY(-2px);
+  box-shadow:0 4px 10px rgba(0,0,0,.4);
+}
+  
+.card-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
   }
   
-  html {
-    /* Ensure font sizing scales well in different browsers */
-    font-size: 16px;
-  }
+.edition-label{
+  position:absolute;
+  bottom:4px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:.55rem;
+  color:#fff;
+  background:rgba(0,0,0,.55);
+  padding:1px 4px;
+  border-radius:3px;
+  pointer-events:none;
+}
   
-  body {
-    font-family: 'Nunito', sans-serif; /* from Google Fonts */
-    background: #f9fafb; /* a very light gray background */
-    color: #333; /* dark text for contrast */
-    line-height: 1.5;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* let the footer stick to the bottom if content is short */
-  }
-  
-  /* 2) Layout Containers */
-  
-  header,
-  footer {
-    background: #212529; /* dark background */
-    color: #f9fafb; /* light text */
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  main {
-    flex: 1; /* expand to fill available vertical space */
-    max-width: 900px; /* limit content width for readability */
-    margin: 0 auto;
-    padding: 1rem;
-  }
-  
-  h1, h2 {
-    margin-bottom: 0.75rem;
-  }
-  
-  section {
-    margin-bottom: 2rem;
-  }
-  
-  /* 3) Card / Form Styling */
-  
-  .section-card-form {
-    background: #ffffff; /* white background for the form area */
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* subtle shadow */
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  
-  /* This container wraps the dropdowns and button */
-  .card-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* two columns layout */
-    gap: 1rem;
-  }
-  
-  .card-form label {
-    display: block;
-    margin-bottom: 0.25rem;
-    font-weight: 600; /* bold label */
-  }
-  
-  .card-form select,
-  .card-form button {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-  
-  .card-form button {
-    cursor: pointer;
-    background: #007bff; /* a blue primary color */
-    color: #ffffff;
-    border: none;
-    font-weight: 600;
-    transition: background 0.2s ease;
-  }
-  
-  .card-form button:hover {
-    background: #005dc1; /* darken on hover */
-  }
-  
-  /* If you have multiple rows of dropdowns, you can reorganize your grid or consider using <fieldset>. */
-  
-  /* 4) "My Cards" Section */
-  
-  #myCardsSection {
-    background: #fdfdfd;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-  }
-  
-  #cardsContainer {
-    margin-top: 1rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1rem;
-    /* This creates a responsive grid for your added cards */
-  }
-  
-  /* 5) Individual Card Items */
-  
-  .card-item {
-    background: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 1rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  
-  .card-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-  }
-  
-  .card-item strong {
-    color: #333;
-  }
-  
-  .card-item p {
-    margin: 0.25rem 0;
-  }
-  
-  /* 6) Footer */
-  
-  footer p {
-    font-size: 0.9rem;
-    margin: 0;
-  }
-  
-  /* 7) Media Queries for Mobile Responsiveness */
-  
-  @media (max-width: 600px) {
-    .card-form {
-      grid-template-columns: 1fr; /* stack the dropdowns and button on small screens */
-    }
-  }
-  
+  /* delete × stays visible */
+.delete-btn{
+  position:absolute;
+  top:2px;
+  right:4px;
+  font-weight:700;
+  font-size:.9rem;
+  color:#FF6666;
+  cursor:pointer;
+  z-index:2;
+}
+.delete-btn:hover{color:#FFAAAA}  
+
+/* drag feedback */
+.card-item:active{cursor:grabbing;opacity:.8;border:1px dashed #aaa}
+.card-item.drag-over{outline:2px dashed #FF9800}
+
+/* responsive */
+@media(max-width:900px){
+  #threeColumnLayout{grid-template-columns:1fr}
+}
